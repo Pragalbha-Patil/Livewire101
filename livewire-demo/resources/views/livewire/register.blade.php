@@ -31,7 +31,10 @@
             @error('password') <span> {{$message}} </span> @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <span>
+            <a href="/login" class="float-right">Already have an account?</a>
+        </span>
     </form>
 
 </div>

@@ -17,9 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'guest'], function(){
+    Route::livewire('/register', 'register')
+        ->layout('layouts.app')
+        ->name('register');
 
-Route::livewire('/register', 'register')
-    ->layout('layouts.app');
+    Route::livewire('/login', 'login')
+        ->layout('layouts.app')
+        ->name('login');
+});
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::post('/logout', 'HomeController@logout')->name('logout');
+});

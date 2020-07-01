@@ -1,6 +1,6 @@
 # Livewire 101
 
-A project demonstrating Laravel Livewire for everything.
+A project demonstrating [Laravel Livewire](https://laravel-livewire.com/) for everything.
 
 ## Installation
 
